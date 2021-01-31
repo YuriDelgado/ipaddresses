@@ -1,12 +1,16 @@
 <h1>IpAddresses#index</h1>
 
 <%= form_with url: validate_url do |f| %>
+  <%= f.label :ip_list %>
   <%= f.text_field :ip_list %><br />
   <small>type the ip list as: 192.168.2.3, 192.168.3.4, etc...</small>
   <br />
   <br />
   <%= f.submit :submit %>
 <% end %>
-<%= @ips.each do |elem| %>
-  <p><%= elem %></p>
-<% end %>
+
+<ul class="results">
+  <%= @ips.each do |elem| %>
+    <li><%= elem %></li>
+  <% end %>
+</ul>
