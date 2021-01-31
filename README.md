@@ -1,24 +1,20 @@
-# README
+# IPvalidator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description:
+This app processes IP addresses received as text strings, and validate the ips received and return an array with informing if the IP is valid or not.
 
-Things you may want to cover:
+* Ruby on Rails version 
+`6.0.3.4`
 
 * Ruby version
+`2.7.0`
 
-* System dependencies
-
-* Configuration
+* Run the project:
+`rails s`
 
 * Database creation
+`rails db:migrate`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run the test suite (minitest)
+`rails test`,
+`rails test:system`
