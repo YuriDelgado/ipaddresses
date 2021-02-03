@@ -1,6 +1,4 @@
 class IpAddressesController < ApplicationController
-  require 'resolv'
-
   def index
     @ips = params[:ips] || []
   end
@@ -20,7 +18,7 @@ class IpAddressesController < ApplicationController
     ipaddresses_params[:ip_list]
       .split(/,/)
       .map do |ip|
-        ip.strip=~Resolv::IPv4::Regex ? ip : 'Invalid address'
+        ip.strip=~IPADDRESS_REGEX ? ip : INVALID_ADDRESS
     end
   end
 end

@@ -25,12 +25,12 @@ RSpec.feature "testing validation feature", :type => :feature do
   end
 
   scenario "User visit index can type a list of valid and invalid addresses, and obtain the validated result list" do
-    fill_in :ip_list, :with => "192.168.1.2, 192.168. 2.4,192.168.1.3, 255.255.255.255, 0.0.0.0, 201.1A.21.3, 201.21"
+    fill_in :ip_list, :with => "192.168.1.2, 192.168. 2.4,192.168.1.3, 255.255.255.255, 0.0.0.0, 201.1A.21.3,, 201.21"
     click_button "submit"
 
     within 'ul.results' do
-      expect(all('li').count).to eq(7)
-      expect(all('li', text: 'Invalid address').count).to eq(3)
+      expect(all('li').count).to eq(8)
+      expect(all('li', text: 'Invalid address').count).to eq(4)
     end
   end
 end
